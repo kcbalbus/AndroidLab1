@@ -22,7 +22,7 @@
         android:layout_width="210dp"
         android:layout_height="57dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:layout_width="211dp"
         android:layout_height="53dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,8 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewWeightMeasure"
