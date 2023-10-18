@@ -5,7 +5,7 @@ import kotlin.math.round
 
 class Result(val height: Double, val weight: Double) {
 
-    val BMI = round(weight/((height/100)*(height/100))*100)/100
+    val BMI = round(weight/((height/100)*(height/100))*10)/10
     var description = ""
     init{
         if (BMI<18.5){

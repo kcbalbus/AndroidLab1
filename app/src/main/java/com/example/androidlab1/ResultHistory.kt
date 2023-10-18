@@ -5,14 +5,14 @@ import java.util.Stack
 
 class ResultHistory {
 
-    private var resultList: Stack<Result> = Stack()
+    private var resultList: ArrayList<Result> = ArrayList()
 
-    fun addResult(height: Double, weight: Double){
-        resultList.add(Result(height, weight))
+    fun addResult(result: Result){
+        resultList.add(result)
     }
 
     fun getLastResult(): Result{
-        return resultList.peek()
+        return resultList.get(resultList.size-1)
     }
 
     companion object {

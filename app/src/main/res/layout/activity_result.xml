@@ -17,26 +17,27 @@
 
     <TextView
         android:id="@+id/textViewResultTxt"
-        android:layout_width="365dp"
-        android:layout_height="439dp"
-        android:text="TextView"
+        android:layout_width="336dp"
+        android:layout_height="66dp"
         android:editable="true"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.316" />
 
-    <Button
-        android:id="@+id/buttonReturn"
-        android:layout_width="160dp"
-        android:layout_height="80dp"
-        android:text="Return"
+    <TextView
+        android:id="@+id/textViewResultDesc"
+        android:layout_width="341dp"
+        android:layout_height="352dp"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintVertical_bias="0.666" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
