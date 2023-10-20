@@ -31,10 +31,6 @@ class ResultActivity: AppCompatActivity() {
             textBMI.setTextColor(Color.GREEN)
         }
 
-
-
-
-
     }
 
     fun getBMITxt(bmi: Double): String{
