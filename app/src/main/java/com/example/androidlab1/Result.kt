@@ -11,12 +11,11 @@ import kotlin.math.round
 
 data class Result(private val height: Double, private val weight: Double, private val metric: Boolean) {
 
-    val timestamp: String
+    val timestamp: String = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
     val BMI: Double
 
 
     init{
-        timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
 
         if (metric){
             BMI = round(weight/((height/100)*(height/100))*10)/10

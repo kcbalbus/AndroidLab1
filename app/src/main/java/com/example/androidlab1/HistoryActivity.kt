@@ -20,9 +20,7 @@ class HistoryActivity: AppCompatActivity() {
 
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerViewHistory)
         recyclerview.layoutManager = LinearLayoutManager(this)
-        Log.d("00pi", "1")
         val adapter = HistoryHolder(resultHistory.getHistory())
-        Log.d("00pi", "2")
         recyclerview.adapter = adapter
 
     }

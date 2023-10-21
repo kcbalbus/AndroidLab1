@@ -15,7 +15,6 @@ class ResultHistory {
 
     fun addResult(result: Result){
         resultList.add(result)
-        Log.d("missing res", resultList.toString())
     }
 
     fun getLastResult(): Result{
@@ -36,10 +35,9 @@ class ResultHistory {
         editor.putString("history", json)
         editor.apply()
 
-        Log.d("00piS", resultList.toString())
     }
 
-    // Function to load the ArrayList from SharedPreferences
+
     fun loadArrayListFromSharedPreferences(context: Context) {
         if(resultList.isEmpty())
         {
@@ -54,7 +52,6 @@ class ResultHistory {
                 resultList = loadedData
             }
 
-            Log.d("00piL", resultList.toString())
         }
 
     }

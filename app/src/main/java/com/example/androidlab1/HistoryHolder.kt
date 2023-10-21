@@ -13,8 +13,7 @@ class HistoryHolder (private val resultHistory: ArrayList<Result>): RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
         // that is used to hold list item
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.history_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.history_item, parent, false)
 
         return ViewHolder(view)
     }
@@ -24,10 +23,7 @@ class HistoryHolder (private val resultHistory: ArrayList<Result>): RecyclerView
 
         val result:Result = resultHistory[position]
 
-        // sets the image to the imageview from our itemHolder class
         holder.textViewHisRes.setText(result.BMI.toString())
-
-        // sets the text to the textview from our itemHolder class
         holder.textViewDate.setText(result.timestamp.toString())
 
     }
