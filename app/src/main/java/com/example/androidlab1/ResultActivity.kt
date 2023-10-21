@@ -33,6 +33,7 @@ class ResultActivity: AppCompatActivity() {
 
     }
 
+
     fun getBMITxt(bmi: Double): String{
         if (bmi<18.5){
             return "Underweight"

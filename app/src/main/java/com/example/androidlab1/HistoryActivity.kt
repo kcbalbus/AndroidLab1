@@ -2,6 +2,7 @@ package com.example.androidlab1
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,21 +14,16 @@ class HistoryActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
+
         val resultHistory: ResultHistory = ResultHistory.getInstance()
 
-        // getting the recyclerview by its id
+
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerViewHistory)
-
-        // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
-
-        // This will pass the ArrayList to our Adapter
+        Log.d("00pi", "1")
         val adapter = HistoryHolder(resultHistory.getHistory())
-
-        // Setting the Adapter with the recyclerview
+        Log.d("00pi", "2")
         recyclerview.adapter = adapter
-
-
 
     }
 }

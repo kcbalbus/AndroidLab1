@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter
 import kotlin.math.round
 
 
-@Serializable
+
 data class Result(private val height: Double, private val weight: Double, private val metric: Boolean) {
 
     val timestamp: String

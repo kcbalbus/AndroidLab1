@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         var result:Result = Result(-1.0, -1.0, true)
         val resultHistory: ResultHistory = ResultHistory.getInstance()
+        resultHistory.loadArrayListFromSharedPreferences(this)
 
         val toolbar: androidx.appcompat.widget.Toolbar = this.findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -42,6 +43,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val resultHistory: ResultHistory = ResultHistory.getInstance()
+        resultHistory.saveArrayListToSharedPreferences(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

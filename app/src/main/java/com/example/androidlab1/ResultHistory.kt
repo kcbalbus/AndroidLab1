@@ -1,7 +1,10 @@
 package com.example.androidlab1
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.util.Stack
@@ -21,18 +24,39 @@ class ResultHistory {
 
     fun getHistory(): ArrayList<Result> {
         val history: ArrayList<Result> = ArrayList<Result>(resultList.reversed())
-        Log.d("missing res", history.toString())
         return history
     }
 
-    fun saveHistory(){
-        val json = Json.encodeToString(resultList)
+    fun saveArrayListToSharedPreferences(context: Context) {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        val gson = Gson()
+        val json = gson.toJson(resultList)
 
-        //val sharedPreferences: SharedPreferences =
+        editor.putString("history", json)
+        editor.apply()
+
+        Log.d("00piS", resultList.toString())
     }
 
-    fun loadHistory(){
-        //resultList = Json.decodeFromString<ArrayList<Result>>()
+    // Function to load the ArrayList from SharedPreferences
+    fun loadArrayListFromSharedPreferences(context: Context) {
+        if(resultList.isEmpty())
+        {
+
+            val sharedPreferences: SharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE)
+            val gson = Gson()
+            val json = sharedPreferences.getString("history", null)
+
+
+            if (json != null) {
+                val loadedData: ArrayList<Result> = gson.fromJson(json, object : TypeToken<ArrayList<Result>>() {}.type)
+                resultList = loadedData
+            }
+
+            Log.d("00piL", resultList.toString())
+        }
+
     }
 
     companion object {
