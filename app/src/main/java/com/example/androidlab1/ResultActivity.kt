@@ -16,7 +16,7 @@ class ResultActivity: AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         val resultHistory: ResultHistory = ResultHistory.getInstance()
-        val result = resultHistory.getLastResult()
+        val result: Result = resultHistory.getLastResult()
 
         val textBMI: TextView = this.findViewById(R.id.textViewResultNum)
         textBMI.setText(result.BMI.toString())
