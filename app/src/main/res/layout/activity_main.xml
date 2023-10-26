@@ -8,13 +8,13 @@
 
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="285dp"
-        android:layout_height="177dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="340dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="0.0"
         android:textColor="@color/black"
-        android:textSize="120sp"
+        android:textSize="100sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextWeight" />
@@ -111,8 +111,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="361dp"
-        android:layout_height="84dp"
+        android:layout_width="359dp"
+        android:layout_height="61dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
