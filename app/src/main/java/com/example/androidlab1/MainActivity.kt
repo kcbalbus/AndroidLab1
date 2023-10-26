@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.Toolbar
 import com.example.androidlab1.Result
 
@@ -31,9 +32,14 @@ class MainActivity : AppCompatActivity() {
         val textOutResult: TextView = this.findViewById(R.id.textViewResult)
         val buttonCalculate: Button = this.findViewById(R.id.buttonCalculate)
         buttonCalculate.setOnClickListener{
-            result = Result(textInHeight.text.toString().toDouble(), textInWeight.text.toString().toDouble(), textOutHeight.text.equals("cm"))
-            resultHistory.addResult(result)
-            textOutResult.setText(result.BMI.toString())
+            if(textInHeight.text.toString().toDouble()>0.0 && textInWeight.text.toString().toDouble()>0.0) {
+                result = Result(textInHeight.text.toString().toDouble(), textInWeight.text.toString().toDouble(), textOutHeight.text.equals("cm"))
+                resultHistory.addResult(result)
+                textOutResult.setText(result.BMI.toString())
+            } else {
+                Toast.makeText(this, "Wrong Input!", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         textOutResult.setOnClickListener {
